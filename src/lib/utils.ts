@@ -49,7 +49,6 @@ export function constructMetadata({
     },
     icons,
     metadataBase: new URL('https://docubot-ten.vercel.app'),
-    themeColor: '#ffffff',
     ...(noIndex && {
       robots: {
         index: false,

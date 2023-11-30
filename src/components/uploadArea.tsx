@@ -129,7 +129,7 @@ function UploadArea({ isSubscribed }: { isSubscribed: boolean }) {
                             fill="currentFill"
                           />
                         </svg>
-                        <span className="sr-only">Redirecting...</span>
+                        <span>Redirecting...</span>
                       </div>
                     </div>
                   ) : null}

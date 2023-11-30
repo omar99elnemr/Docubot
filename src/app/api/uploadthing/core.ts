@@ -62,6 +62,8 @@ const onUploadComplete = async ({
 
     const isProExceeded =
       pagesAmt > PLANS.find((plan) => plan.name === "Pro")!.pagesPerPdf;
+      const isUltimateExceeded =
+      pagesAmt > PLANS.find((plan) => plan.name === "Ultimate")!.pagesPerPdf;
     const isFreeExceeded =
       pagesAmt > PLANS.find((plan) => plan.name === "Free")!.pagesPerPdf;
 
@@ -78,7 +80,7 @@ const onUploadComplete = async ({
       pineconeIndex,
     });
 
-    if ((isSubscribed && isProExceeded) || (!isSubscribed && isFreeExceeded)) {
+    if ((isSubscribed && isProExceeded) || (isSubscribed && isUltimateExceeded) || (!isSubscribed && isFreeExceeded)) {
       await db.file.update({
         data: {
           uploadStatus: "FAILED",
