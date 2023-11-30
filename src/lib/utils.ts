@@ -48,7 +48,7 @@ export function constructMetadata({
       creator: "@Omar_99"
     },
     icons,
-    metadataBase: new URL('https://docubot-ten.vercel.app'),
+    metadataBase: new URL('https://docubot-lovat.vercel.app'),
     ...(noIndex && {
       robots: {
         index: false,
