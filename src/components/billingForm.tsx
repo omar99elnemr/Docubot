@@ -10,12 +10,12 @@ import { Loader2 } from "lucide-react";
 import { format } from "date-fns";
 
 interface BillingFormProps{
-    subPlan: Awaited<
+  subscriptionPlan: Awaited<
         ReturnType<typeof getUserSubscriptionPlan>
     >
 }
 
-const BillingForm = ({ subPlan }: BillingFormProps) => {
+const BillingForm = ({ subscriptionPlan }: BillingFormProps) => {
     const { toast } = useToast()
 
     const { mutate: createStripeSession , isLoading} = trpc.createStripeSession.useMutation({
@@ -37,7 +37,7 @@ const BillingForm = ({ subPlan }: BillingFormProps) => {
                 <Card>
                     <CardHeader>
                     <CardTitle>Subscription Plan</CardTitle>
-                    <CardDescription>You&apos;re currently on the <strong>{subPlan.name || 'Free'}</strong> plan.</CardDescription>
+                    <CardDescription>You&apos;re currently on the <strong>{subscriptionPlan.name || 'Free'}</strong> plan.</CardDescription>
                     </CardHeader>
 
                     <CardFooter className="flex flex-col items-start space-y-2 md:flex-row md:justify-between md:space-x-0">
@@ -47,13 +47,13 @@ const BillingForm = ({ subPlan }: BillingFormProps) => {
                             ) : (
                                 null
                             )}
-                            {subPlan.isSubscribed ? 'Manage subscription' : 'Upgrade to PRO'}
+                            {subscriptionPlan.isSubscribed ? 'Manage subscription' : 'Upgrade to PRO'}
                         </Button>
 
-                        {subPlan.isSubscribed ? (
+                        {subscriptionPlan.isSubscribed ? (
                             <p className="rounded-full text-xs font-medium">
-                                {subPlan.isCanceled ? "Access to PRO will be revoked on " : 'Your plan renews on '}
-                                    {format(subPlan.stripeCurrentPeriodEnd!, 'dd.MM.yyyy')}
+                                {subscriptionPlan.isCanceled ? "Access to PRO will be revoked on " : 'Your plan renews on '}
+                                    {format(subscriptionPlan.stripeCurrentPeriodEnd!, 'dd.MM.yyyy')}
                             </p>
                         ) : null}
                     </CardFooter>
