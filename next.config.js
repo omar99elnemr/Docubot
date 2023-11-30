@@ -1,45 +1,28 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  images: {
-
-    domains: [
-      'https://docubot-ten.vercel.app',
-    ],
-    
-    remotePatterns: [
+  async redirects() {
+    return [
       {
-        protocol: "https",
-        hostname: "*.googleusercontent.com",
-        port: "",
-        pathname: "**",
+        source: '/sign-in',
+        destination: '/api/auth/login',
+        permanent: true,
       },
-    ],
+      {
+        source: '/sign-up',
+        destination: '/api/auth/register',
+        permanent: true,
+      },
+    ]
   },
 
-    async redirects() {
-      return [
-        {
-          source: '/sign-in',
-          destination: '/api/auth/login',
-          permanent: true,
-        },
-        {
-          source: '/sign-up',
-          destination: '/api/auth/register',
-          permanent: true,
-        },
-      ]
-    },
-  
-    webpack: (
-      config,
-      { buildId, dev, isServer, defaultLoaders, webpack }
-    ) => {
-      config.resolve.alias.canvas = false
-      config.resolve.alias.encoding = false
-      return config
-    },
-  }
-  
-  module.exports = nextConfig
+  webpack: (
+    config,
+    { buildId, dev, isServer, defaultLoaders, webpack }
+  ) => {
+    config.resolve.alias.canvas = false
+    config.resolve.alias.encoding = false
+    return config
+  },
+}
+
+module.exports = nextConfig

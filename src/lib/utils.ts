@@ -18,7 +18,7 @@ export function absoluteUrl(path: string) {
 export function constructMetadata({
   title = "Docubot - the SaaS for students",
   description = "Docubot is an open-source software to make chatting to your PDF files easy.",
-  image = "public\thumbnail.png",
+  image = '/thumbnail.png',
   icons = "/favicon.ico",
   noIndex = false
 }: {
@@ -49,7 +49,7 @@ export function constructMetadata({
     },
     icons,
     metadataBase: new URL('https://docubot-ten.vercel.app'),
-    themeColor: '#FFF',
+    themeColor: '#ffffff',
     ...(noIndex && {
       robots: {
         index: false,
