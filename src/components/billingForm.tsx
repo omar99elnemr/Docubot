@@ -1,89 +1,67 @@
-'use client'
+"use client";
 
-import { getUserSubscriptionPlan } from '@/lib/stripe'
+import { getUserSubscriptionPlan } from "@/lib/stripe"
+import { useToast } from "./ui/use-toast"
+import { trpc } from "@/app/_trpc/client";
+import MaxWidthWrapper from "./MaxWidthWrapper";
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
+import { Button } from "./ui/button";
+import { Loader2 } from "lucide-react";
+import { format } from "date-fns";
 
-import { trpc } from '@/app/_trpc/client'
-import MaxWidthWrapper from './MaxWidthWrapper'
-
-import { Button } from './ui/button'
-import { Loader2 } from 'lucide-react'
-import { format } from 'date-fns'
-import { useToast } from '@/components/ui/use-toast'
-import { Card,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle, } from '@/components/ui/card'
-
-interface BillingFormProps {
-  subscriptionPlan: Awaited<
-    ReturnType<typeof getUserSubscriptionPlan>
-  >
+interface BillingFormProps{
+    subPlan: Awaited<
+        ReturnType<typeof getUserSubscriptionPlan>
+    >
 }
 
-const BillingForm = ({
-  subscriptionPlan,
-}: BillingFormProps) => {
-  const { toast } = useToast()
+const BillingForm = ({ subPlan }: BillingFormProps) => {
+    const { toast } = useToast()
 
-  const { mutate: createStripeSession, isLoading } =
-    trpc.createStripeSession.useMutation({
-      onSuccess: ({ url }) => {
-        if (url) window.location.href = url
-        if (!url) {
-          toast({
-            title: 'There was a problem...',
-            description: 'Please try again in a moment',
-            variant: 'destructive',
-          })
+    const { mutate: createStripeSession , isLoading} = trpc.createStripeSession.useMutation({
+        onSuccess: ({url}) => {
+            if(url) window.location.href = url
+            if(!url) return toast({
+                title: 'There was a problem processing your payment.',
+                description: 'Please try again in a few minutes.',
+                variant: 'destructive'
+            })
         }
-      },
     })
+    return (
+        <MaxWidthWrapper className="max-w-5xl">
+            <form onSubmit={(e) => {
+                e.preventDefault()
+                createStripeSession()
+            }} className="mt-12">
+                <Card>
+                    <CardHeader>
+                    <CardTitle>Subscription Plan</CardTitle>
+                    <CardDescription>You&apos;re currently on the <strong>{subPlan.name || 'Free'}</strong> plan.</CardDescription>
+                    </CardHeader>
 
-  return (
-    <MaxWidthWrapper className='max-w-5xl'>
-      <form
-        className='mt-12'
-        onSubmit={(e) => {
-          e.preventDefault()
-          createStripeSession()
-        }}>
-        <Card>
-          <CardHeader>
-            <CardTitle>Subscription Plan</CardTitle>
-            <CardDescription>
-              You are currently on the{' '}
-              <strong>{subscriptionPlan.name}</strong> plan.
-            </CardDescription>
-          </CardHeader>
+                    <CardFooter className="flex flex-col items-start space-y-2 md:flex-row md:justify-between md:space-x-0">
+                        <Button type="submit">
+                            {isLoading ? (
+                                <Loader2 className="mr-4 h-4 w-4 animate-spin" />
+                            ) : (
+                                null
+                            )}
+                            {subPlan.isSubscribed ? 'Manage subscription' : 'Upgrade to PRO'}
+                        </Button>
 
-          <CardFooter className='flex flex-col items-start space-y-2 md:flex-row md:justify-between md:space-x-0'>
-            <Button className='py-2 px-4 bg-blue-700 text-white rounded-lg font-semibold' type='submit'>
-              {isLoading ? (
-                <Loader2 className='mr-4 h-4 w-4 animate-spin' />
-              ) : null}
-              {subscriptionPlan.isSubscribed
-                ? 'Manage Subscription'
-                : 'Upgrade Now'}
-            </Button>
-
-            {subscriptionPlan.isSubscribed ? (
-              <p className='rounded-full text-xs font-medium'>
-                {subscriptionPlan.isCanceled
-                  ? 'Your plan will be canceled on '
-                  : 'Your plan renews on'}
-                {format(
-                  subscriptionPlan.stripeCurrentPeriodEnd!,
-                  'dd.MM.yyyy'
-                )}
-                .
-              </p>
-            ) : null}
-          </CardFooter>
-        </Card>
-      </form>
-    </MaxWidthWrapper>
-  )
+                        {subPlan.isSubscribed ? (
+                            <p className="rounded-full text-xs font-medium">
+                                {subPlan.isCanceled ? "Access to PRO will be revoked on " : 'Your plan renews on '}
+                                    {format(subPlan.stripeCurrentPeriodEnd!, 'dd.MM.yyyy')}
+                            </p>
+                        ) : null}
+                    </CardFooter>
+                </Card>
+            </form>
+        </MaxWidthWrapper>
+    )
+    
 }
 
 export default BillingForm
