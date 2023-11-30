@@ -48,8 +48,8 @@ export function constructMetadata({
       creator: "@Omar_99"
     },
     icons,
-    metadataBase: new URL('https://docubot.vercel.app'),
-    themeColor: '#FFFF',
+    metadataBase: new URL('https://docubot-ten.vercel.app'),
+    themeColor: '#FFF',
     ...(noIndex && {
       robots: {
         index: false,
