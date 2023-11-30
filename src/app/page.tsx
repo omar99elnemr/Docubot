@@ -4,6 +4,7 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import Footer from "@/components/Footer";
 
 export default function Home() {
 
@@ -105,6 +106,7 @@ export default function Home() {
         </div>
 
       </div>
+      <Footer />
     </>
   )
 }

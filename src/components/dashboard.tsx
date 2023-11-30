@@ -70,8 +70,8 @@ function Dashboard({subscriptionPlan} : PageProps ) {
                     {format(new Date(file.createdAt), "dd MMM yyyy")}
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <BiMessageDots size={'17px'}/> mocked
+                  <div className='flex items-center gap-2'>
+                    <BiMessageDots className='h-4 w-4' /> {file._count.messages}{' '}
                   </div>
 
                   <button onClick={() => deleteFile({ id: file.id })}>
