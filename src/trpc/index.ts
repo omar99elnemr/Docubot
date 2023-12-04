@@ -7,6 +7,7 @@ import { INFINITE_QUERY_LIMIT } from "@/config/infinite-queries";
 import { absoluteUrl } from "@/lib/utils";
 import { getUserSubscriptionPlan, stripe } from "@/lib/stripe";
 import { PLANS } from "@/config/stripe";
+import add from "date-fns/add";
 
 export const appRouter = router({
   authCallback: publicProcedure.query(async () => {
@@ -188,6 +189,20 @@ export const appRouter = router({
             metadata: {
               userId: userId,
             },
+          })
+
+          await db.user.update({
+            where: {
+              id: userId,
+            },
+            data: {
+              stripePriceId: PLANS.find(
+                  (plan) => plan.name === 'Pro'
+                )?.price.priceIds.test,
+              stripeCurrentPeriodEnd: add(new Date(), {
+                months: 1,
+              }),
+            }
           })
   
         return { url: stripeSession.url }
