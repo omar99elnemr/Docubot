@@ -161,7 +161,7 @@ const Page = () => {
                     <div className='flex h-20 items-center justify-center border-b border-t border-gray-200 bg-gray-50'>
                       <div className='flex items-center space-x-1'>
                         <p>
-                          {quota.toLocaleString()} PDFs/mo
+                          Up to {quota.toLocaleString()} PDFs
                           included
                         </p>
 
