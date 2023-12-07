@@ -94,7 +94,7 @@ const Page = () => {
           footnote: 'The maximum amount of pages per PDF-file.',
         },
         {
-          text: '24MB file size limit',
+          text: '32MB file size limit',
           footnote: 'The maximum file size of a single PDF file.',
         },
         {
@@ -170,8 +170,7 @@ const Page = () => {
                             <HelpCircle className='h-4 w-4 text-zinc-500' />
                           </TooltipTrigger>
                           <TooltipContent className='w-80 p-2'>
-                            How many PDFs you can upload per
-                            month.
+                            How many PDFs you can upload.
                           </TooltipContent>
                         </Tooltip>
                       </div>

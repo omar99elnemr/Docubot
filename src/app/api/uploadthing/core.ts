@@ -32,7 +32,7 @@ const onUploadComplete = async ({
   };
 }) => {
 
-  // throw new Error("New Error")
+
   const isFileExist = await db.file.findFirst({
     where: {
       key: file.key,
@@ -68,7 +68,7 @@ const onUploadComplete = async ({
       pagesAmt > PLANS.find((plan) => plan.name === "Free")!.pagesPerPdf;
 
     
-    //vectorize aand index the document
+    //vectorize and index the document
     const pineconeIndex = pinecone.Index("docubot"); // Use a single index name
 
     const embeddings = new OpenAIEmbeddings({
@@ -107,6 +107,9 @@ export const ourFileRouter = {
     .middleware(middleware)
     .onUploadComplete(onUploadComplete),
   proPlanUploader: f({ pdf: { maxFileSize: "16MB" } })
+    .middleware(middleware)
+    .onUploadComplete(onUploadComplete),  
+    ultimatePlanUploader: f({ pdf: { maxFileSize: "32MB" } })
     .middleware(middleware)
     .onUploadComplete(onUploadComplete),  
 } satisfies FileRouter;

@@ -79,13 +79,13 @@ function UploadArea({ isSubscribed }: { isSubscribed: boolean }) {
               className="flex flex-col justify-center items-center w-full h-full rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100"
             >
               <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                <AiOutlineCloud size={`30px`} />
+                <AiOutlineCloud size={`40px`} />
                 <p className="mb-2 text-sm text-zinc-700 ">
                   <span className="font-semibold">Click to upload</span> or drag
                   and drop
                 </p>
                 <p className="text-sm text-zinc-500">
-                  PDF (up to {isSubscribed ? "16MB" : "4MB"})
+                  PDF (up to {isSubscribed ? "16MB & 25 pages" : "4MB & 10 pages"})
                 </p>
               </div>
 
