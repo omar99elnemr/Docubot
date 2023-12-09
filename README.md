@@ -11,7 +11,7 @@ Built with
 ## Getting started
 ---------------------------------------------------------------------------------
 
-To get started with this project, in your IDM run
+To get started with this project, in your IDE run
 
 ```source-shell
   git clone https://github.com/omar99elnemr/Docubot.git
