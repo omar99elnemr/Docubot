@@ -1,18 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Docubot - A Modern Fullstack SaaS for chatting with PDF files 💻
+==================================================================
 
-## Getting Started
+Built with   
+🛠️🎨 Next.js App Router + tRPC + TypeScript + Prisma + Tailwind  
+ 🧠 OpenAI + Pinecone + Langchain
 
-First, run the development server:
+-------------------------------------------------------------------
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+## Getting started
+---------------------------------------------------------------------------------
+
+To get started with this project, in your IDE run
+
+```source-shell
+  git clone https://github.com/omar99elnemr/Docubot.git
+  pnpm install
+  pnpm dev
 ```
+
+- Copy the environment-example content into a separate .env file, fill them out with yours  and that's all you need to get started!
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
