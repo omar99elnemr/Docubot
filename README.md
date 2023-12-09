@@ -19,7 +19,7 @@ To get started with this project, in your IDE run
   pnpm dev
 ```
 
-- Copy the environment-example content into a separate .env file, fill them out with yours  and that's all you need to get started!
+- Copy the environment-file content into a separate .env file, fill them out with yours  and that's all you need to get started!
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
