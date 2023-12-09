@@ -17,7 +17,7 @@ To get started with this project, in your IDM run
   pnpm dev
 ```
 
-### copy the environment-example content into a separate .env file, fill them out with yours  and that's all you need to get started!
+- copy the environment-example content into a separate .env file, fill them out with yours  and that's all you need to get started!
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
