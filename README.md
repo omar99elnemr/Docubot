@@ -9,15 +9,15 @@ Built with the Next.js App Router, tRPC, TypeScript, Prisma, Tailwind, OpenAI, P
 ## Getting started
 ---------------------------------------------------------------------------------
 
-To get started with this project, run
+To get started with this project, in your IDM run
 
 ```source-shell
-  git clone https://github.com/joschan21/quill.git
+  git clone https://github.com/omar99elnemr/Docubot.git
   pnpm install
   pnpm dev
 ```
 
-and copy the environment-example content into a separate .env file, fill them out with yours  and that's all you need to get started!
+### copy the environment-example content into a separate .env file, fill them out with yours  and that's all you need to get started!
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
