@@ -1,7 +1,9 @@
-## Docubot - A Modern Fullstack SaaS for chatting with PDF files
+## Docubot - A Modern Fullstack SaaS for chatting with PDF files 💻
 ==================================================================
 
-Built with the Next.js App Router, tRPC, TypeScript, Prisma, Tailwind, OpenAI, Pinecone & Langchain
+Built with 
+🛠️🎨 Next.js App Router + tRPC + TypeScript + Prisma + Tailwind
+ 🧠 OpenAI + Pinecone + Langchain
 
 -------------------------------------------------------------------
 
