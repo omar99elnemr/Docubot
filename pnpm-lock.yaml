@@ -666,7 +666,7 @@ packages:
       react: ^18.1.0
       react-dom: ^18.1.0
     dependencies:
-      '@kinde-oss/kinde-typescript-sdk': 2.3.1
+      '@kinde-oss/kinde-typescript-sdk': 2.4.0
       cookie: 0.5.0
       crypto-js: 4.2.0
       jwt-decode: 3.1.2
@@ -678,8 +678,8 @@ packages:
       - supports-color
     dev: false
 
-  /@kinde-oss/kinde-typescript-sdk@2.3.1:
-    resolution: {integrity: sha512-/3eg18zW/gs8fHPCzOHbWDudWUaUgQhEBEWEodFXRd7edo392wEOseufEyUvf8/ZNFPXilU4XCcdkkVpj0r0Ag==}
+  /@kinde-oss/kinde-typescript-sdk@2.4.0:
+    resolution: {integrity: sha512-+8g6sB0Cm8amLgSdvDQwN0QbWq3T+3mnRuCtGbNOr2bfKxPR9vYA+gKROJqFUWx+r3RVtklcubbAuw+pFhObkQ==}
     dependencies:
       jwt-decode: 4.0.0
       uncrypto: 0.1.3
