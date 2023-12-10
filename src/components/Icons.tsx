@@ -1,8 +1,8 @@
-import { Bot, Feather, LucideProps, User } from "lucide-react";
+import { Bot, LucideProps, User } from "lucide-react";
 
 export const Icons = {
     user: User,
     logo: (props: LucideProps) => (
-        <Bot {...props} />
+        <Bot {...props} size={32} color="#3266e5" strokeWidth={2.25} />
     )
 }
