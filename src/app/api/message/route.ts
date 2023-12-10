@@ -18,9 +18,9 @@ interface SearchResult {
 function customFilter(result: SearchResult, targetFileName: string): boolean {
   return result.metadata?.fileName === targetFileName;
 }
-export const POST = async (req: NextRequest) => {
+export const POST = async (req: NextRequest) => 
   // endpoint for asking a question to a PDF file
-
+{
   const body = await req.json();
   const { getUser } = getKindeServerSession();
   const user = getUser();
