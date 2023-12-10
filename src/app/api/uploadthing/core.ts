@@ -67,19 +67,6 @@ const onUploadComplete = async ({
     const isFreeExceeded =
       pagesAmt > PLANS.find((plan) => plan.name === "Free")!.pagesPerPdf;
 
-    
-    //vectorize and index the document
-    const pineconeIndex = pinecone.Index("docubot"); // Use a single index name
-
-    const embeddings = new OpenAIEmbeddings({
-      openAIApiKey: process.env.OPENAI_API_KEY,
-    });
-
-    await PineconeStore.fromDocuments(pageLevelDocs, embeddings, {
-      // @ts-ignore
-      pineconeIndex,
-    });
-
     if ((isSubscribed && isProExceeded) || (isSubscribed && isUltimateExceeded) || (!isSubscribed && isFreeExceeded)) {
       await db.file.update({
         data: {
@@ -90,11 +77,29 @@ const onUploadComplete = async ({
         },
       });
     }
-    else {await db.file.update({
+
+    
+    //vectorize and index the document
+    const pineconeIndex = pinecone.Index("docubot"); // Use a single index name
+
+    const embeddings = new OpenAIEmbeddings({
+      openAIApiKey: process.env.OPENAI_API_KEY,
+    });
+
+    await PineconeStore.fromDocuments(pageLevelDocs, embeddings, 
+      // @ts-ignore
+      {
+        pineconeIndex,
+        namespace: createdFile.id,
+      }
+    );
+
+
+    await db.file.update({
       data: { uploadStatus: "SUCCESS" },
       where: { id: createdFile.id },
     });
-  }
+  
   } catch (err) {
     await db.file.update({
       data: { uploadStatus: "FAILED" },

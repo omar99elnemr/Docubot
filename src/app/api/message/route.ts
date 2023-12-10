@@ -57,12 +57,15 @@ export const POST = async (req: NextRequest) =>
   const pineconeIndex = pinecone.Index("docubot"); // Use a single index name
 
   const vectorStore = await PineconeStore.fromExistingIndex(embeddings,
-  {
      //@ts-ignore 
-    pineconeIndex,
-  });
+     {
+      pineconeIndex,
+      namespace: file.id,
+    }
+  );
 
   const results = await  vectorStore.similaritySearch(message,4)
+  
   const prevMessage = await db.message.findMany({
     where : {
       fileId
