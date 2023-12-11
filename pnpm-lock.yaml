@@ -132,8 +132,8 @@ dependencies:
     specifier: ^3.2.4
     version: 3.2.4(react@18.2.0)
   stripe:
-    specifier: ^13.7.0
-    version: 13.7.0
+    specifier: ^14.8.0
+    version: 14.8.0
   tailwind-merge:
     specifier: ^1.14.0
     version: 1.14.0
@@ -6007,8 +6007,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /stripe@13.7.0:
-    resolution: {integrity: sha512-0cbUNl5aDwt5rIZeE/WgyTxZN/PtwyeA5KcVJrHj260tjN4IOo2BZikN+dxhKoeBfI4aSRAd3E5vHRKmjjaSbA==}
+  /stripe@14.8.0:
+    resolution: {integrity: sha512-Qdecqk7lx095BE829NWxrG1+69NjPuHrpZqeR61i2KO00fpKkjMX9TYjwFU+WjQD6ZcNmCGOwNfnz5VnI5bjIg==}
     engines: {node: '>=12.*'}
     dependencies:
       '@types/node': 20.10.0
