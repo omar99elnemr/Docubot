@@ -191,19 +191,21 @@ export const appRouter = router({
             },
           })
 
-          // await db.user.update({
-          //   where: {
-          //     id: userId,
-          //   },
-          //   data: {
-          //     stripePriceId: PLANS.find(
-          //         (plan) => plan.name === 'Pro'
-          //       )?.price.priceIds.test,
-          //     stripeCurrentPeriodEnd: add(new Date(), {
-          //       months: 1,
-          //     }),
-          //   }
-          // })
+          await db.user.update({
+            where: {
+              id: userId,
+            },
+            data: {
+              stripeCustomerId: 'cus_PAGRFWwcV5K5bg',
+              stripeSubscriptionId: 'pi_3OLvugAL8dJhwHdc1hBnUJJB' ,
+              stripePriceId: PLANS.find(
+                  (plan) => plan.name === 'Pro'
+                )?.price.priceIds.test,
+              stripeCurrentPeriodEnd: add(new Date(), {
+                months: 1,
+              }),
+            }
+          })
   
         return { url: stripeSession.url }
       }
