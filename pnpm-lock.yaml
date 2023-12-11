@@ -62,6 +62,9 @@ dependencies:
   '@uploadthing/react':
     specifier: ^6.0.2
     version: 6.0.2(next@14.0.3)(react@18.2.0)(uploadthing@6.0.3)
+  '@vercel/analytics':
+    specifier: ^1.1.1
+    version: 1.1.1
   '@vercel/speed-insights':
     specifier: ^1.0.1
     version: 1.0.1
@@ -128,9 +131,6 @@ dependencies:
   simplebar-react:
     specifier: ^3.2.4
     version: 3.2.4(react@18.2.0)
-  skeleton:
-    specifier: ^0.1.2
-    version: 0.1.2
   stripe:
     specifier: ^13.7.0
     version: 13.7.0
@@ -1800,6 +1800,12 @@ packages:
       '@uploadthing/mime-types': 0.2.2
     dev: false
 
+  /@vercel/analytics@1.1.1:
+    resolution: {integrity: sha512-+NqgNmSabg3IFfxYhrWCfB/H+RCUOCR5ExRudNG2+pcRehq628DJB5e1u1xqwpLtn4pAYii4D98w7kofORAGQA==}
+    dependencies:
+      server-only: 0.0.1
+    dev: false
+
   /@vercel/speed-insights@1.0.1:
     resolution: {integrity: sha512-cm8KTTsDgS1AbWsgIEZuMoyPUjclzeqJihyLp0tnA21B/x9iTE8hu2S5zM+/DBzihuHxWL1dx9pCWk22ctMFWQ==}
     requiresBuild: true
@@ -2416,13 +2422,6 @@ packages:
       periscopic: 3.1.0
     dev: false
 
-  /coffee-script@1.3.3:
-    resolution: {integrity: sha512-QjQ1T4BqyHv19k6XSfdhy/QLlIOhywz0ekBUCa9h71zYMJlfDTGan/Z1JXzYkZ6v8R+GhvL/p4FZPbPW8WNXlg==}
-    engines: {node: '>=0.4.0'}
-    deprecated: CoffeeScript on NPM has moved to "coffeescript" (no hyphen)
-    hasBin: true
-    dev: false
-
   /color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
     dependencies:
@@ -2450,11 +2449,6 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
-
-  /colors@0.6.2:
-    resolution: {integrity: sha512-OsSVtHK8Ir8r3+Fxw/b4jS1ZLPXkV6ZxDRJQzeD7qo0SqMXWrHDM71DgYzPMHY8SFJ0Ao+nNU2p1MmwdzKqPrw==}
-    engines: {node: '>=0.1.90'}
-    dev: false
 
   /combined-stream@1.0.8:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
@@ -4764,11 +4758,6 @@ packages:
     dev: false
     optional: true
 
-  /mkdirp@0.3.5:
-    resolution: {integrity: sha512-8OCq0De/h9ZxseqzCH8Kw/Filf5pF/vMI6+BH7Lu0jXz2pqYCjTAQRolSxRIi+Ax+oCCjlxoJMP0YQ4XlrQNHg==}
-    deprecated: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
-    dev: false
-
   /mkdirp@1.0.4:
     resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
     engines: {node: '>=10'}
@@ -5750,6 +5739,10 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
+  /server-only@0.0.1:
+    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
+    dev: false
+
   /set-blocking@2.0.0:
     resolution: {integrity: sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw==}
     requiresBuild: true
@@ -5871,15 +5864,6 @@ packages:
 
   /sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
-    dev: false
-
-  /skeleton@0.1.2:
-    resolution: {integrity: sha512-+7AFCihPnKe93c3qOlWbY3zTMYHe5IuQSA1azTTJ9Z6ILs9GTDx9QCd7zjaGKQtKS8QGQ3dQ+BDXDEhmOUm7vg==}
-    hasBin: true
-    dependencies:
-      coffee-script: 1.3.3
-      colors: 0.6.2
-      mkdirp: 0.3.5
     dev: false
 
   /slash@3.0.0:
