@@ -9,9 +9,10 @@ import { buttonVariants } from "../ui/button";
 
 type ChatWrapperProps = {
   fileId: string;
+  isSubscribed: boolean;
 };
 
-function ChatWrapper({ fileId }: ChatWrapperProps) {
+function ChatWrapper({ fileId, isSubscribed }: ChatWrapperProps) {
   const { data, isLoading } = trpc.getFileUploadStatus.useQuery(
     {
       fileId,
@@ -53,7 +54,7 @@ function ChatWrapper({ fileId }: ChatWrapperProps) {
         <ChatInput isDisabled />
       </div>
     );
-    if (data?.status === "FAILED")
+    if (data?.status === "FAILED" && !isSubscribed)
     return (
       <div className="relative min-h-full bg-zinc-50 flex divide-y divide-zinc-200 flex-col justify-between gap-2">
         <div className="flex-1 flex flex-col justify-center items-centermb-28">
