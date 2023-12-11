@@ -49,15 +49,14 @@ function Dashboard({subscriptionPlan} : PageProps ) {
             .map((file) => (
               <li
                 key={file.id}
-                className='col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow-lg transition hover:shadow-xl'>               
-                <Link
+                className='col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow-lg transition hover:shadow-xl'>                <Link
                   href={`/dashboard/${file.id}`}
                   className="flex flex-col gap-2"
                 >
                   <div className="pt-6 px-6 flex w-full items-center justify-between space-x-6">
-                  <div className="h-10 w-10 flex-shrink-0 rounded-full " 
-                    style={{ backgroundImage: `url('https://robohash.org/${file.id}')` }}
-                  />
+                    <div className="h-10 w-10 flex-shrink-0 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500">
+                        <img src={`https://robohash.org/${file.id}?200x200`} alt='Bot' />
+                    </div>
                     <div className="flex-1 truncate">
                       <div className="flex items-center space-x-3">
                         <h3 className="truncate text-lg font-medium text-zinc-900">
