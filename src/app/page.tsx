@@ -19,14 +19,14 @@ export default function Home() {
         <Link href={'/pricing'}>
           <div className="mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-grey-300 hover:bg-white/50">
             <p className="animate-intext-sm font-semibold text-gray-700">
-              <Button variant={'ghost'} size={'sm'} className="gap-1.5 hover:bg-transparent">Check out our new pro plan <ChevronRight className="h-5 w-5 text-blue-600" /></Button>
+              <Button variant={'ghost'} size={'sm'} className="gap-1.5 hover:bg-transparent">Check out our plans feature <ChevronRight className="h-5 w-5 text-blue-600" /></Button>
             </p>
           </div></Link>
         <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl heading">
           Chat with any <span className="text-blue-600 heading">document</span> in seconds.
         </h1>
         <p className="mt-5 max-w-prose text-zinc-700 sm:text-lg">
-          Simple. Upload your PDF and start an engaging conversation.
+          Simply Upload your PDF and start an engaging conversation.
         </p>
 
         <Link className={buttonVariants({
@@ -80,7 +80,7 @@ export default function Home() {
             <div className="flex flex-col space-y-2 border-l-4 border-sinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
               <span className="text-sm font-medium text-blue-600">Step 1</span>
               <span className="text-xl font-semibold">Create an account.</span>
-              <span className="mt-2 text-zinc-700">Choose either our limited free or our <Link href="/pricing" className="text-blue-700 underline underline-offset-2">awesome pro plan</Link>.</span>
+              <span className="mt-2 text-zinc-700">Choose either our limited free or our <Link href="/pricing" className="text-blue-700 underline underline-offset-2">awesome paid plans</Link>.</span>
             </div>
           </li>
           <li className="md:flex-1">

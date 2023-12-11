@@ -7,6 +7,7 @@ import { format } from "date-fns";
 import { useState } from "react";
 import { getUserSubscriptionPlan } from "@/lib/stripe";
 import Skeleton from 'react-loading-skeleton'
+import "react-loading-skeleton/dist/skeleton.css";
 
 
 interface PageProps {
