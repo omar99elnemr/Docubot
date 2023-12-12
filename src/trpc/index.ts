@@ -190,7 +190,7 @@ export const appRouter = router({
               userId: userId,
             },
           })
-
+/* Testing
           await db.user.update({
             where: {
               id: userId,
@@ -206,6 +206,7 @@ export const appRouter = router({
               }),
             }
           })
+*/
   
         return { url: stripeSession.url }
       }
