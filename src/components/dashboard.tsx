@@ -8,7 +8,6 @@ import { useState } from "react";
 import { getUserSubscriptionPlan } from "@/lib/stripe";
 import Skeleton from 'react-loading-skeleton'
 import "react-loading-skeleton/dist/skeleton.css";
-import Image from 'next/image';
 
 
 interface PageProps {
@@ -56,7 +55,7 @@ function Dashboard({subscriptionPlan} : PageProps ) {
                 >
                   <div className="pt-6 px-6 flex w-full items-center justify-between space-x-6">
                     <div className="h-10 w-10 flex-shrink-0 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500">
-                        <Image src={`https://robohash.org/${file.id}`} alt='Bot' quality={100} />
+                        <img src={`https://robohash.org/${file.id}`} alt='Bot' />
                     </div>
                     <div className="flex-1 truncate">
                       <div className="flex items-center space-x-3">
