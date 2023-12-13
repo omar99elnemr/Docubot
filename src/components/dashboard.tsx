@@ -56,7 +56,7 @@ function Dashboard({subscriptionPlan} : PageProps ) {
                 >
                   <div className="pt-6 px-6 flex w-full items-center justify-between space-x-6">
                     <div className="h-10 w-10 flex-shrink-0 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500">
-                        <Image src={`https://robohash.org/${file.id}`} alt='Bot' />
+                        <Image src={`https://robohash.org/${file.id}`} alt='Bot' quality={100} />
                     </div>
                     <div className="flex-1 truncate">
                       <div className="flex items-center space-x-3">
