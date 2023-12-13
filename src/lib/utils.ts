@@ -16,7 +16,7 @@ export function absoluteUrl(path: string) {
 }
 
 export function constructMetadata({
-  title = "Docubot - the SaaS for students",
+  title = "Docubot - The SaaS that gives your PDFs superpowers",
   description = "Docubot is an open-source SaaS to chat with your PDF files.",
   image = '',
   icons = "/favicon.ico",
