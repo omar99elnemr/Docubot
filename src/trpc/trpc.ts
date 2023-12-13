@@ -1,3 +1,4 @@
+// This file initializes and configures the TRPC server, including middleware for authentication.
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { TRPCError, initTRPC } from '@trpc/server';
  
