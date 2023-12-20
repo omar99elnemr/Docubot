@@ -92,7 +92,7 @@ const formattedPrevMessages = prevMessage.map((msg) => ({
     },
     {
       role: 'user',
-      content: `Use the following pieces of context (or previous conversaton if needed) to answer the users question in markdown format. \nIf you don't know the answer, just say that you don't know, don't try to make up an answer.
+      content: `Use the following pieces of context (or previous conversaton if needed) to answer the users question in markdown format. \n If you don't know the answer, just say that you don't know, don't try to make up an answer.
       
 \n----------------\n
 

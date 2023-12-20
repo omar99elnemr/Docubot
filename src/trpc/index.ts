@@ -196,8 +196,8 @@ export const appRouter = router({
               id: userId,
             },
             data: {
-              stripeCustomerId: 'cus_PAGRFWwcV5K5bg',
-              stripeSubscriptionId: 'sub_1OLvugAL8dJhwHdcMO9HtP0s' ,
+              stripeCustomerId: 'cus_PDeqdp3gfvOE0l',
+              stripeSubscriptionId: 'sub_1OPDWqAL8dJhwHdcuOajuuOJ' ,
               stripePriceId: PLANS.find(
                   (plan) => plan.name === 'Pro'
                 )?.price.priceIds.test,
